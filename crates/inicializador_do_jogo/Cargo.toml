@@ -1,0 +1,12 @@
+[package]
+name = "inicializador_do_jogo"
+description = "Monta os argumentos e inicia o processo Java do Minecraft"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+instalador_de_versoes.workspace = true
+
+[dev-dependencies]
+reqwest.workspace = true

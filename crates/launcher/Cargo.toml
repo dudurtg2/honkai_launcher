@@ -1,0 +1,24 @@
+[package]
+name = "launcher"
+description = "Janela do Honkai Launcher: login, instalacao e botao Jogar"
+version.workspace = true
+edition.workspace = true
+
+[[bin]]
+name = "honkai_launcher"
+path = "src/main.rs"
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+reqwest.workspace = true
+autenticacao.workspace = true
+instalador_de_versoes.workspace = true
+inicializador_do_jogo.workspace = true
+eframe = { version = "0.31", default-features = false, features = ["default_fonts", "glow", "wayland", "x11"] }
+open = "5"
+
+[features]
+# Gera a versao de teste com login offline (honkai_launcher_offline.exe).
+modo_de_teste_offline = ["autenticacao/modo_de_teste_offline"]

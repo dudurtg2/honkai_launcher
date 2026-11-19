@@ -1,0 +1,22 @@
+[package]
+name = "autenticacao"
+description = "Login Microsoft -> Xbox Live -> Minecraft e cofre de credenciais"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+reqwest.workspace = true
+uuid = { version = "1", features = ["v3"] }
+
+[target.'cfg(windows)'.dependencies]
+keyring = { version = "3", features = ["windows-native"] }
+
+[target.'cfg(not(windows))'.dependencies]
+keyring = { version = "3" }
+
+[features]
+# Conta offline para testes. Nunca ligar no launcher distribuido aos jogadores.
+modo_de_teste_offline = []
